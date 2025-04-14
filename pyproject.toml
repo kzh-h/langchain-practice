@@ -1,0 +1,27 @@
+[project]
+name = "langchain-sample"
+version = "0.0.1"
+description = ""
+authors = []
+readme = "README.md"
+requires-python = ">= 3.13"
+dependencies = [
+    "gitpython>=3.1.44",
+    "jupyter>=1.1.1",
+    "langchain-chroma>=0.2.2",
+    "langchain-community>=0.3.20",
+    "langchain-core>=0.3.49",
+    "langchain-ollama>=0.3.0",
+    "langchain-openai>=0.3.11",
+    "langfuse>=2.60.2",
+    "langgraph>=0.3.21",
+    "tavily-python>=0.5.1",
+]
+
+[dependency-groups]
+dev = [
+    "mypy>=1.15.0",
+    "pre-commit>=4.2.0",
+    "pytest>=8.3.5",
+    "ruff>=0.11.2",
+]

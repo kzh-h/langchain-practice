@@ -1,0 +1,66 @@
+line-length = 120
+indent-width = 4
+
+ # Assume Python 3.12
+ target-version = "py312"
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+  ".bzr",
+  ".direnv",
+  ".eggs",
+  ".git",
+  ".git-rewrite",
+  ".hg",
+  ".ipynb_checkpoints",
+  ".mypy_cache",
+  ".nox",
+  ".pants.d",
+  ".pyenv",
+  ".pytest_cache",
+  ".pytype",
+  ".ruff_cache",
+  ".svn",
+  ".tox",
+  ".venv",
+  ".vscode",
+  "__pypackages__",
+  "_build",
+  "buck-out",
+  "build",
+  "dist",
+  "node_modules",
+  "site-packages",
+  "venv",
+]
+
+[lint]
+select = ["ALL"]
+extend-select = ["I"]
+ignore = [
+  # https://docs.astral.sh/ruff/formatter/#conflicting-lint-rules
+  "COM812", "COM819",
+  "D206", "D300",
+  "E111", "E114", "E117",
+  "ISC001", "ISC002",
+  "Q000", "Q001", "Q002", "Q003",
+  "W191",
+  ###
+  "S101",  # allow assertion
+]
+
+
+[lint.pydocstyle]
+convention = "google"
+
+[lint.isort]
+length-sort = true
+
+[lint.mccabe]
+max-complexity = 10
+
+[format]
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

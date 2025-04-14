@@ -1,0 +1,46 @@
+default_stages: [pre-commit]
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.3.5
+    hooks:
+      - id: ruff
+        name: Ruff check
+        description: "Run 'ruff check' for extremely fast Python linting"
+        args: [--fix]
+
+      - id: ruff-format
+        name: Ruff format
+        description: "Run 'ruff format' for extremely fast Python formatting"
+
+  # - repo: https://github.com/hadolint/hadolint
+  #   rev: v2.12.0
+  #   hooks:
+  #     - id: hadolint
+  #       name: Lint Dockerfiles
+  #       description: Runs hadolint to lint Dockerfiles
+  #       language: system
+  #       types: ["dockerfile"]
+  #       entry: hadolint
+
+  - repo: https://github.com/pre-commit/mirrors-mypy
+    # mirros-mypy version.
+    rev: v1.4.1
+    hooks:
+      - id: mypy
+        name: Run mypy
+        args: [--ignore-missing-imports]
+        additional_dependencies:
+          - types-requests
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.4.0
+    hooks:
+      - id: trailing-whitespace
+        types: [python]
+      - id: end-of-file-fixer
+        types: [python]
+      # - id: check-yaml
+      - id: check-added-large-files
+      - id: detect-private-key
+      # - id: no-commit-to-branch   # to protect specific branches from direct checkins.
+      #   args: [--branch, main]

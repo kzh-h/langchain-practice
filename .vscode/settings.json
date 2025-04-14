@@ -1,0 +1,81 @@
+{
+  "terminal.integrated.defaultProfile.linux": "bash",
+  // .venvへのパス
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python",
+  // フォーマット自動整形
+  "editor.formatOnSave": true,
+  // python
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    // import並び替え
+    "editor.codeActionsOnSave": {
+      "source.organizeImports.ruff": "explicit"
+    }
+  },
+  // notebook
+  "notebook.formatOnSave.enabled": true,
+  "notebook.codeActionsOnSave": {
+    "notebook.source.fixAll.ruff": "explicit",
+    "notebook.source.organizeImports.ruff": "explicit"
+  },
+  // ruff
+  "ruff.interpreter": [
+    "${workspaceFolder}/.venv/bin/python"
+  ],
+  "ruff.importStrategy": "fromEnvironment",
+  "ruff.organizeImports": true,
+  "ruff.configuration": "--config=ruff.toml",
+  // mypy
+  "mypy-type-checker.args": [
+    "--config",
+    "mypy.ini"
+  ],
+  "mypy-type-checker.path": [
+    "${workspaceFolder}/.venv//bin/mypy"
+  ],
+  "mypy-type-checker.interpreter": [
+    "${workspaceFolder}/.venv/bin/python"
+  ],
+  "[markdown]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.codeActionsOnSave": {
+      "source.fixAll.markdownlint": "explicit"
+    }
+  },
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+  },
+  // docstringのフォーマット
+  "autoDocstring.docstringFormat": "google",
+  // pytest
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./tests",
+    "-p",
+    "test*.py"
+  ],
+  // liveshare
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "liveshare.shareExternalFiles": false,
+  "liveshare.anonymousGuestApproval": "reject",
+  "liveshare.autoShareServers": false,
+  "liveshare.autoShareTerminals": false,
+  "liveshare.connectionMode": "relay",
+  "liveshare.increasedGuestLimit": false,
+  "liveshare.joinDebugSessionOption": "Prompt",
+  "liveshare.openSharedServers": false,
+  "liveshare.showReadOnlyUsersInEditor": "always"
+}

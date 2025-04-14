@@ -1,0 +1,26 @@
+name: langchain
+
+services:
+  langchain:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: langchain
+    volumes:
+      - type: bind
+        source: .
+        target: /home/vscode/workspace
+        bind:
+          create_host_path: true
+    tty: true
+    user: vscode
+    userns_mode: "keep-id:uid=1000,gid=1000"
+    environment:
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-http://172.17.0.1:3000}
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://172.17.0.1:11434}
+      SECRET_KEY: ${SECRET_KEY:-}
+      PUBLIC_KEY: ${PUBLIC_KEY:-}
+
+networks:
+  default:
+    name: langchain

@@ -1,0 +1,11 @@
+{
+    "allowCompoundWords": true,
+    "ignorePaths": [
+        "xxxxxx/**"
+    ],
+    "words": [
+        "mypy",
+        "OLLAMA",
+        "userns"
+    ]
+}
