@@ -7,11 +7,11 @@
 ## Quick start
 
 ```sh
-podman compose up -d --build
+docker compose up -d --build
 ```
 
 Down
 
 ```sh
-podman compose down
+docker compose down
 ```

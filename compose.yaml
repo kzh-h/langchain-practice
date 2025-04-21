@@ -16,10 +16,11 @@ services:
     user: vscode
     userns_mode: "keep-id:uid=1000,gid=1000"
     environment:
-      LANGFUSE_HOST: ${LANGFUSE_HOST:-http://172.17.0.1:3000}
-      OLLAMA_HOST: ${OLLAMA_HOST:-http://172.17.0.1:11434}
+      LANGFUSE_HOST: ${LANGFUSE_HOST:-http://host.docker.internal:3000}
+      OLLAMA_HOST: ${OLLAMA_HOST:-http://host.docker.internal:11434}
       SECRET_KEY: ${SECRET_KEY:-}
       PUBLIC_KEY: ${PUBLIC_KEY:-}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
 
 networks:
   default:
